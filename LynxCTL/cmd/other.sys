@@ -1,0 +1,11 @@
+#!/bin/bash
+#LinuxCTL OTHER 
+echo "
+ooooo                                           oooooooo8 ooooooooooo ooooo      
+ 888      oooo   oooo oo oooooo   oooo   oooo o888     88 88  888  88  888       
+ 888       888   888   888   888    888o888   888             888      888       
+ 888      o 888 888    888   888    o88 88o   888o     oo     888      888      o
+o888ooooo88   8888    o888o o888o o88o   o88o  888oooo88     o888o    o888ooooo88
+           o8o888                                                                
+           "
+echo "LynxCTL | Usage : [up,info]"

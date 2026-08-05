@@ -1,0 +1,16 @@
+#!/bin/bash
+# LinuxCTL
+case "$1" in
+up)
+bash cmd/up.sys 2>/dev/null || echo "Files Are Not Correct"
+;;
+info)
+bash cmd/info.sys 2>/dev/null || echo "Files Are Not Correct"
+;;
+log)
+bash cmd/log.sys 2>/dev/null || echo "Files Are Not Correct"
+;;
+*)
+bash cmd/other.sys 2>/dev/null || echo "Files Are Not Correct"
+;;
+esac

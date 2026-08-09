@@ -1,0 +1,33 @@
+#!/bin/bash
+# LynxCTL Server Manager
+
+echo "Welcome To LynxCTL Server Manager"
+
+while true; do
+    echo "
+1. Docker
+2. Apache
+3. Nginx
+4. Server Info
+5.exit
+"
+
+    read -rp ">>> " cmd arg arg2
+
+    case "$cmd" in
+        1)
+            bash cmd/server/cmd/docker.sys
+            ;;
+        2)
+            bash cmd/server/cmd/apache.sys
+            ;;
+        3)
+            bash cmd/server/cmd/nginx.sys
+            ;;
+        4)
+            bash cmd/server/cmd/serverinfo.sys
+            ;;
+        5)
+         exit    
+    esac
+done

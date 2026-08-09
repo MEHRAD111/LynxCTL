@@ -1,0 +1,18 @@
+#!/bin/bash
+# LynxCTL Server->Apache Config
+echo "
+1.Apache : Edit With Vim
+2.Apache : Edit With Nano
+3.Apache Config File"
+read -rp ">>" apache 
+case "$apache" in
+1)
+sudo vim  /etc/apache2/httpd.conf
+;;
+2)
+sudo nano  /etc/apache2/httpd.conf
+;;
+3)
+sudo cat  /etc/apache2/httpd.conf | less
+;;
+esac

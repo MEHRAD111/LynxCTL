@@ -1,0 +1,52 @@
+#!/bin/bash
+# LinuxCTL
+case "$1" in
+up)
+bash cmd/up.sys 
+;;
+info)
+bash cmd/info.sys 
+;;
+log)
+bash cmd/log.sys 
+;;
+server)
+bash cmd/server/server.sys 
+;;
+monitor)
+htop || gtop || top
+;;
+in)
+if [[ -f /usr/bin/pacman ]]; then
+echo "Founded PacMan On Your System"
+sudo pacman -S "$2"
+elif [[ -f /usr/bin/dnf ]]; then 
+echo "Founded DNF On Your System"
+sudo dnf in "$2"
+elif [[ -f /usr/bin/apt ]]; then
+echo "Founded APT On Your System"
+sudo apt install "$2"
+elif [[ -f /usr/bin/zypper ]]; then
+echo "Founded Zypper On Your System"
+sudo zypper in "$2"
+fi
+;;
+remove)
+if [[ -f /usr/bin/pacman ]]; then
+echo "Founded PacMan On Your System"
+sudo pacman -R "$2"
+elif [[ -f /usr/bin/dnf ]]; then 
+echo "Founded DNF On Your System"
+sudo dnf remove "$2"
+elif [[ -f /usr/bin/apt ]]; then
+echo "Founded APT On Your System"
+sudo apt remove "$2"
+elif [[ -f /usr/bin/zypper ]]; then
+echo "Founded Zypper On Your System"
+sudo zypper remove "$2"
+fi
+;;
+*)
+bash cmd/other.sys 
+;;
+esac

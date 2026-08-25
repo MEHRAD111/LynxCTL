@@ -1,0 +1,14 @@
+#!/bin/bash
+# LinuxCTL INFO
+lspci 
+lscpu
+swapon
+neofetch
+fastfetch
+free
+hostname
+hostnamectl
+lsblk -f
+du -sh
+du 
+df -h

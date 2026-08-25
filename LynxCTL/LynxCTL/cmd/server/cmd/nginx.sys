@@ -1,0 +1,43 @@
+#!/bin/bash
+#LynxCTL Server->Nginx
+echo "
+1.Nginx Config Edit With Vim
+2.Nginx Config Edit With Nano
+3.Nginx Config
+4.Nginx Reload
+5.Status
+6.Disable
+7.Enable
+8.Start
+9.Stop
+"
+read -rp ">>" nginx
+case "$nginx" in
+1)
+sudo vim /etc/nginx/nginx.conf
+;;
+2)
+sudo nano /etc/nginx/nginx.conf
+;;
+3)
+sudo cat /etc/nginx/nginx.conf | less
+;;
+4)
+nginx -t reload
+;;
+5)
+sudo systemctl status nginx
+;;
+6)
+sudo systemctl disable nginx
+;;
+7)
+sudo systemctl enable nginx
+;;
+8)
+sudo systemctl start nginx
+;;
+9)
+sudo systemctl stop nginx
+;;
+esac

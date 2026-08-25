@@ -1,0 +1,15 @@
+#!/bin/bash
+#LinuxCTL Uptade&Upgrade
+if [[ -f /usr/bin/pacman ]]; then
+echo "Founded PacMan On Your System"
+sudo pacman -S "$1"
+elif [[ -f /usr/bin/dnf ]]; then 
+echo "Founded DNF On Your System"
+sudo dnf in "$1"
+elif [[ -f /usr/bin/apt ]]; then
+echo "Founded APT On Your System"
+sudo apt install "$1"
+elif [[ -f /usr/bin/zypper ]]; then
+echo "Founded Zypper On Your System"
+sudo zypper in "$1"
+fi

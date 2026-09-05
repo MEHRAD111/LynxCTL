@@ -1,0 +1,33 @@
+read -rp "Path: " path
+read -rp "Port: " port
+read -rp "Domain: " domain
+read -rp "Index: " index
+
+cat <<EOF > /etc/nginx/nginx.conf
+http {
+    server {
+        listen $port;
+        listen [::]:$port;
+
+        server_name $domain;
+
+        root $path;
+        index index.html index.htm $index;
+
+        location / {
+            try_files \$uri \$uri/ =404;
+        }
+
+        location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg|woff2)$ {
+            expires 7d;
+            add_header Cache-Control "public, max-age=604800";
+        }
+
+        location ~ /\. {
+            deny all;
+        }
+    }
+}
+EOF
+
+nginx -t && systemctl reload nginx

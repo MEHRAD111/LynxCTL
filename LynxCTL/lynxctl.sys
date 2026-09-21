@@ -16,6 +16,15 @@ bash cmd/server/server.sys
 monitor)
 htop || gtop || top
 ;;
+clean)
+sudo rm -rf /var/cache/*
+sudo rm -rf ~/.cache/*
+sudo rm -rf /var/tmp/*
+sudo rm -rf /var/cache/pacman/pkg/*
+sudo rm -rf ~/.cache/yay/*
+sudo apt clean
+sudo dnf clean
+;;
 in)
 if [[ -f /usr/bin/pacman ]]; then
 echo "Founded PacMan On Your System"

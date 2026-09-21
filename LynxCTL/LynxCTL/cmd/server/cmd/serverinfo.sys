@@ -1,4 +1,0 @@
-#!/bin/bash
-#LynxCTL Server->ServerInfo
-cat /etc/os-release | grep PRE  
-cat /etc/os-release | grep ID

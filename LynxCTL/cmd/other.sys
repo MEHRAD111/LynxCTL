@@ -8,4 +8,4 @@ ooooo                                           oooooooo8 ooooooooooo ooooo
 o888ooooo88   8888    o888o o888o o88o   o88o  888oooo88     o888o    o888ooooo88
            o8o888                                                                
            "
-echo "LynxCTL | Usage : [up,info,log,server,monitor,in,clean]"
+echo "LynxCTL | Usage : [up,info,log,server,monitor,in,clean,doctor]"

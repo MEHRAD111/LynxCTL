@@ -1,0 +1,15 @@
+#!/bin/bash
+#LynxCTL Doctor
+echo "LynxCTL Doctor"
+echo "Start checking the whole system"
+echo "Ram usage"
+free -h | grep "Mem"
+echo "Disk's/Space's"
+lsblk -f
+df -h
+echo "Network/Ping"
+ping -c 5 google.com
+ping -c 5 8.8.8.8
+echo "SystemD Service's"
+sudo systemctl | grep "exited" | less
+echo "Exited"

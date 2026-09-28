@@ -55,6 +55,9 @@ echo "Founded Zypper On Your System"
 sudo zypper remove "$2"
 fi
 ;;
+doctor)
+bash cmd/doc.sys
+;;
 *)
 bash cmd/other.sys 
 ;;

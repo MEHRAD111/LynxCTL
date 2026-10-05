@@ -1,5 +1,6 @@
 #!/bin/bash
 # LinuxCTL
+Version=11
 case "$1" in
 up)
 bash cmd/up.sys 
@@ -57,6 +58,18 @@ fi
 ;;
 doctor)
 bash cmd/doc.sys
+;;
+update)
+wget -qO- https://github.com/MEHRAD111/LynxCTL/blob/main/LynxCTL/lynxctl.sys | grep Version
+echo "Your LynxCTL Version=$Version"
+read -rp "Do you want to resume?" yn
+if [ "$yn" == "y" ]; then
+cd /
+sudo git clone https://github.com/MEHRAD111/LynxCTL.git
+echo "Installed new version in /"
+else
+echo "Exited"
+fi
 ;;
 *)
 bash cmd/other.sys 

@@ -71,6 +71,9 @@ else
 echo "Exited"
 fi
 ;;
+shutdown)
+shutdown -h
+;;
 *)
 bash cmd/other.sys 
 ;;
